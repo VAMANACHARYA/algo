@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include "prefixSumUtils.h"
 using namespace std;
 
 // Function to create prefix sum array
@@ -56,9 +57,9 @@ int main() {
     cout << "Prefix sum array: ";
     printArray(prefix3);
     
-    // Sum from index 1 to 3 (elements 4, 6, 8)
+    // Sum from index 1 to 3 (elements 4, 6, 8) using the utility function
     int left = 1, right = 3;
-    int rangeSum = prefix3[right] - (left > 0 ? prefix3[left - 1] : 0);
+    int rangeSum = getRangeSum(prefix3, left, right);
     cout << "Sum of elements from index " << left << " to " << right << ": " << rangeSum << endl;
     
     return 0;
